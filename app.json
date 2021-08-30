@@ -1,0 +1,12 @@
+{
+  "name": "spotify-app",
+  "displayName": "spotify-app",
+  "expo": {
+    "name": "spotify-app",
+    "slug": "spotify-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
