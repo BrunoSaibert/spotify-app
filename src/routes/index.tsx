@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ionicons} from '@expo/vector-icons';
+import {Feather} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTheme} from 'styled-components';
 
@@ -31,7 +31,7 @@ export function Routes() {
         component={Home}
         options={{
           tabBarIcon: ({size, color}) => (
-            <Ionicons name="home" size={size} color={color} />
+            <Feather name="home" size={size} color={color} />
           ),
         }}
       />
@@ -40,7 +40,7 @@ export function Routes() {
         component={Busca}
         options={{
           tabBarIcon: ({size, color}) => (
-            <Ionicons name="search" size={size} color={color} />
+            <Feather name="search" size={size} color={color} />
           ),
         }}
       />
@@ -49,7 +49,7 @@ export function Routes() {
         component={Biblioteca}
         options={{
           tabBarIcon: ({size, color}) => (
-            <Ionicons name="library-outline" size={size} color={color} />
+            <Feather name="bar-chart-2" size={size} color={color} />
           ),
         }}
       />
