@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTheme} from 'styled-components';
 
 import * as S from './styles';
 
@@ -42,51 +43,58 @@ export function Home() {
     },
   ];
 
+  const theme = useTheme();
+
   return (
     <S.Container>
-      <S.WellcomeWrapper>
-        <S.Title>Boa noite</S.Title>
+      <S.Header
+        colors={[theme.colors.primary, theme.colors.darker]}
+        start={[0, 0]}
+        end={[0.1, 0.23]}>
+        <S.WellcomeWrapper>
+          <S.Title>Boa noite</S.Title>
 
-        <S.ActionsWrapper>
-          <S.ActionButton onPress={() => {}}>
-            <S.ActionIcon name="bell" />
-          </S.ActionButton>
+          <S.ActionsWrapper>
+            <S.ActionButton onPress={() => {}}>
+              <S.ActionIcon name="bell" />
+            </S.ActionButton>
 
-          <S.ActionButton onPress={() => {}}>
-            <S.ActionIcon name="clock" />
-          </S.ActionButton>
+            <S.ActionButton onPress={() => {}}>
+              <S.ActionIcon name="clock" />
+            </S.ActionButton>
 
-          <S.ActionButton onPress={() => {}}>
-            <S.ActionIcon name="settings" />
-          </S.ActionButton>
-        </S.ActionsWrapper>
-      </S.WellcomeWrapper>
+            <S.ActionButton onPress={() => {}}>
+              <S.ActionIcon name="settings" />
+            </S.ActionButton>
+          </S.ActionsWrapper>
+        </S.WellcomeWrapper>
 
-      <S.PlayListWrapper>
-        <S.PlayListGrid
-          data={data}
-          renderItem={({item}: any) => (
-            <S.PlayListGridItem>
-              <S.PlayListGridItemImage
-                source={{
-                  uri: item.imageUrl,
-                }}
-                style={{
-                  borderBottomLeftRadius: 4,
-                  borderBottomRightRadius: 0,
-                  borderTopRightRadius: 0,
-                  borderTopLeftRadius: 4,
-                }}
-              />
-              <S.PlayListGridItemTitle>{item.title}</S.PlayListGridItemTitle>
-            </S.PlayListGridItem>
-          )}
-          keyExtractor={({id}: any) => `${id}`}
-          showsHorizontalScrollIndicator={false}
-          columnWrapperStyle={{justifyContent: 'space-between'}}
-          numColumns={2}
-        />
-      </S.PlayListWrapper>
+        <S.PlayListWrapper>
+          <S.PlayListGrid
+            data={data}
+            renderItem={({item}: any) => (
+              <S.PlayListGridItem>
+                <S.PlayListGridItemImage
+                  source={{
+                    uri: item.imageUrl,
+                  }}
+                  style={{
+                    borderBottomLeftRadius: 4,
+                    borderBottomRightRadius: 0,
+                    borderTopRightRadius: 0,
+                    borderTopLeftRadius: 4,
+                  }}
+                />
+                <S.PlayListGridItemTitle>{item.title}</S.PlayListGridItemTitle>
+              </S.PlayListGridItem>
+            )}
+            keyExtractor={({id}: any) => `${id}`}
+            showsHorizontalScrollIndicator={false}
+            columnWrapperStyle={{justifyContent: 'space-between'}}
+            numColumns={2}
+          />
+        </S.PlayListWrapper>
+      </S.Header>
     </S.Container>
   );
 }

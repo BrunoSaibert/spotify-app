@@ -5,7 +5,15 @@ import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 import {BorderlessButton, RectButton} from 'react-native-gesture-handler';
 import {Feather} from '@expo/vector-icons';
 
+import {LinearGradient} from 'expo-linear-gradient';
+
 export const Container = styled.View`
+  flex: 1;
+
+  background-color: ${({theme}) => theme.colors.darker};
+`;
+
+export const Header = styled(LinearGradient)`
   flex: 1;
 
   background-color: ${({theme}) => theme.colors.darker};
