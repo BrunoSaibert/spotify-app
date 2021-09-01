@@ -2,11 +2,29 @@
   "name": "spotify-app",
   "displayName": "spotify-app",
   "expo": {
-    "name": "spotify-app",
+    "name": "Spotify",
     "slug": "spotify-app",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "icon": "./assets/icon.png",
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#121212"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.trebias.ios.spotify"
+    },
+    "android": {
+      "package": "com.trebias.android.spotify",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#121212"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }
