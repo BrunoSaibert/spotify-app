@@ -10,6 +10,19 @@ type Props = {
   recents: any;
 };
 
+const date = new Date();
+const hour = date.getHours();
+
+let title = '';
+
+if (hour > 6 && hour < 12) {
+  title = 'Bom dia';
+} else if (hour < 18) {
+  title = 'Boa tarde';
+} else {
+  title = 'Boa noite';
+}
+
 export function Dashboard({color, recents}: Props) {
   const theme = useTheme();
 
@@ -20,7 +33,7 @@ export function Dashboard({color, recents}: Props) {
         start={[0, 0]}
         end={[0.12, 0.5]}>
         <S.WellcomeWrapper>
-          <S.Title>Boa noite</S.Title>
+          <S.Title>{title}</S.Title>
 
           <S.ActionsWrapper>
             <S.ActionButton onPress={() => {}}>
