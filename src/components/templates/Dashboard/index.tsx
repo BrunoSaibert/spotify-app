@@ -2,6 +2,7 @@ import React from 'react';
 import {useTheme} from 'styled-components';
 
 import {Recents} from '../../orgamins/Recents';
+import {Slider} from '../../orgamins/Slider';
 
 import * as S from './styles';
 
@@ -52,6 +53,17 @@ export function Dashboard({color, recents}: Props) {
 
         <Recents data={recents} />
       </S.Header>
+
+      <Slider title="Seus programas" data={recents} type="podcast" />
+      <Slider title="Seus artistas" data={recents} type="artist" />
+      <Slider
+        title="Seus artistas mini"
+        data={recents}
+        type="artist"
+        size="small"
+      />
+      <Slider title="Tocadas recentemente" data={recents} size="small" />
+      <Slider title="100% você" data={recents} />
     </S.Container>
   );
 }

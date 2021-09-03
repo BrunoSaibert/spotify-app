@@ -7,6 +7,7 @@ export const dataRecents = [
   {
     id: '2',
     title: 'Queens Of The Stone Age',
+    description: 'Álbum · Villians',
     imageUrl: require('../assets/images/qotsa.jpg'),
   },
   {

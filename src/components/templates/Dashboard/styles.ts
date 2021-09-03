@@ -6,9 +6,7 @@ import {Feather} from '@expo/vector-icons';
 
 import {LinearGradient} from 'expo-linear-gradient';
 
-export const Container = styled.View`
-  flex: 1;
-
+export const Container = styled.ScrollView`
   background-color: ${({theme}) => theme.colors.darker};
 `;
 
