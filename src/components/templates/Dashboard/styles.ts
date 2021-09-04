@@ -1,13 +1,14 @@
-import styled from 'styled-components/native';
-import {RFValue} from 'react-native-responsive-fontsize';
-import {getStatusBarHeight} from 'react-native-iphone-x-helper';
-import {BorderlessButton} from 'react-native-gesture-handler';
-import {Feather} from '@expo/vector-icons';
+import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { BorderlessButton } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
 
-import {LinearGradient} from 'expo-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.ScrollView`
-  background-color: ${({theme}) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.darker};
+  margin-bottom: 56px;
 `;
 
 export const Header = styled(LinearGradient)``;
@@ -24,8 +25,8 @@ export const WellcomeWrapper = styled.View`
 export const Title = styled.Text`
   font-size: ${RFValue(20)}px;
   line-height: ${RFValue(27)}px;
-  font-family: ${({theme}) => theme.fonts.open_sans_700};
-  color: ${({theme}) => theme.colors.lighter};
+  font-family: ${({ theme }) => theme.fonts.open_sans_700};
+  color: ${({ theme }) => theme.colors.lighter};
 
   letter-spacing: -0.3px;
 `;
@@ -39,6 +40,6 @@ export const ActionButton = styled(BorderlessButton)`
 `;
 
 export const ActionIcon = styled(Feather)`
-  color: ${({theme}) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.grey};
   font-size: ${RFValue(22)}px;
 `;

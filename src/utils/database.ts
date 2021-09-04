@@ -82,9 +82,9 @@ export const dataPodcast = [
   {
     id: "2",
     type: "podcast",
-    title: "Podcast FalaDev",
-    author: "Rocketseat",
-    imageUrl: require("../assets/images/fala_dev.jpg"),
+    title: "His Dark Materials (Fronteidas do Universo)",
+    author: "HBO Latin America",
+    imageUrl: require("../assets/images/his_dark_materials.jpg"),
   },
   {
     id: "3",
@@ -96,9 +96,9 @@ export const dataPodcast = [
   {
     id: "4",
     type: "podcast",
-    title: "His Dark Materials (Fronteidas do Universo)",
-    author: "HBO Latin America",
-    imageUrl: require("../assets/images/his_dark_materials.jpg"),
+    title: "Podcast FalaDev",
+    author: "Rocketseat",
+    imageUrl: require("../assets/images/fala_dev.jpg"),
   },
   {
     id: "5",
