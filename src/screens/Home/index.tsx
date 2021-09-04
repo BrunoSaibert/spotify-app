@@ -1,12 +1,19 @@
-import React from 'react';
-import {useTheme} from 'styled-components';
+import React from "react";
+import { useTheme } from "styled-components";
 
-import {Dashboard} from '../../components/templates/Dashboard';
+import { Dashboard } from "../../components/templates/Dashboard";
 
-import {dataRecents} from '../../utils/recents';
+import { dataRecents, dataPodcast, dataArtists } from "../../utils/database";
 
 export function Home() {
   const theme = useTheme();
 
-  return <Dashboard color={theme.colors.primary} recents={dataRecents} />;
+  return (
+    <Dashboard
+      color={theme.colors.primary}
+      recents={dataRecents}
+      podcasts={dataPodcast}
+      artists={dataArtists}
+    />
+  );
 }

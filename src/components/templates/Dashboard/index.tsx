@@ -1,30 +1,32 @@
-import React from 'react';
-import {useTheme} from 'styled-components';
+import React from "react";
+import { useTheme } from "styled-components";
 
-import {Recents} from '../../orgamins/Recents';
-import {Slider} from '../../orgamins/Slider';
+import { Recents } from "../../orgamins/Recents";
+import { Slider } from "../../orgamins/Slider";
 
-import * as S from './styles';
+import * as S from "./styles";
 
 type Props = {
   color: string;
   recents: any;
+  artists: any;
+  podcasts: any;
 };
 
 const date = new Date();
 const hour = date.getHours();
 
-let title = '';
+let title = "";
 
 if (hour > 6 && hour < 12) {
-  title = 'Bom dia';
+  title = "Bom dia";
 } else if (hour < 18) {
-  title = 'Boa tarde';
+  title = "Boa tarde";
 } else {
-  title = 'Boa noite';
+  title = "Boa noite";
 }
 
-export function Dashboard({color, recents}: Props) {
+export function Dashboard({ color, recents, podcasts, artists }: Props) {
   const theme = useTheme();
 
   return (
@@ -32,7 +34,8 @@ export function Dashboard({color, recents}: Props) {
       <S.Header
         colors={[color, theme.colors.darker]}
         start={[0, 0]}
-        end={[0.12, 0.5]}>
+        end={[0.12, 0.5]}
+      >
         <S.WellcomeWrapper>
           <S.Title>{title}</S.Title>
 
@@ -54,15 +57,9 @@ export function Dashboard({color, recents}: Props) {
         <Recents data={recents} />
       </S.Header>
 
-      <Slider title="Seus programas" data={recents} type="podcast" />
-      <Slider title="Seus artistas" data={recents} type="artist" />
-      <Slider
-        title="Seus artistas mini"
-        data={recents}
-        type="artist"
-        size="small"
-      />
+      <Slider title="Seus programas" data={podcasts} />
       <Slider title="Tocadas recentemente" data={recents} size="small" />
+      <Slider title="Principais artistas" data={artists} />
       <Slider title="100% você" data={recents} />
     </S.Container>
   );

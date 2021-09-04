@@ -1,31 +1,32 @@
-import React from 'react';
-import {ImageProps} from 'react-native';
+import React from "react";
+import { ImageProps } from "react-native";
 
-import {CategoryImage} from '../../atoms/CategoryImage';
+import { CategoryImage } from "../../atoms/CategoryImage";
 
-import * as S from './styles';
+import * as S from "./styles";
 
 export type CategoryProps = {
   id: string;
+  type: "playlist" | "artist" | "podcast";
   title?: string;
   description?: string;
+  author?: string;
   imageUrl: ImageProps;
 };
 
 type Props = {
   data: CategoryProps;
-  type: 'normal' | 'artist' | 'podcast';
-  size: 'small' | 'large';
+  size: "small" | "large";
 };
 
 let round: number;
 let sizeCard: number;
 
-export function Category({data, type, size}: Props) {
-  const textAlign: string = type === 'artist' ? 'center' : 'left';
+export function Category({ data, size }: Props) {
+  const textAlign: string = data.type === "artist" ? "center" : "left";
 
   switch (size) {
-    case 'small':
+    case "small":
       sizeCard = 120;
       break;
 
@@ -34,14 +35,14 @@ export function Category({data, type, size}: Props) {
       break;
   }
 
-  switch (type) {
-    case 'normal':
+  switch (data.type) {
+    case "playlist":
       round = 0;
       break;
-    case 'artist':
+    case "artist":
       round = sizeCard;
       break;
-    case 'podcast':
+    case "podcast":
       round = 8;
       break;
 
@@ -53,10 +54,24 @@ export function Category({data, type, size}: Props) {
     <S.Container size={sizeCard}>
       <CategoryImage source={data.imageUrl} size={sizeCard} round={round} />
 
-      {!!data.title && <S.Title align={textAlign}>{data.title}</S.Title>}
+      {!!data.title && (
+        <S.Title
+          align={textAlign}
+          numberOfLines={data.type === "podcast" ? 1 : 2}
+        >
+          {data.title}
+        </S.Title>
+      )}
 
-      {!!data.description && (
+      {size !== "small" && !!data.description && (
         <S.Description align={textAlign}>{data.description}</S.Description>
+      )}
+
+      {size !== "small" && !!data.author && (
+        <S.Description align={textAlign}>
+          {data.type === "podcast" && "Show · "}
+          {data.author}
+        </S.Description>
       )}
     </S.Container>
   );
