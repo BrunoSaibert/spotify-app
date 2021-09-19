@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { useTheme } from "styled-components";
 
 import { Recents } from "../../orgamins/Recents";
@@ -31,6 +32,8 @@ export function Dashboard({ color, recents, podcasts, artists }: Props) {
 
   return (
     <S.Container>
+      <StatusBar style="light" backgroundColor="transparent" translucent />
+
       <S.Header
         colors={[color, theme.colors.darker]}
         start={[0, 0]}
